@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bhūmi – Gather, Create, Celebrate</title>
-    <!-- Import a friendly script font for headings -->
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <!-- Import Pacifico font for headings -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <style>
         /* Reset and basic styles */
         body {
@@ -89,7 +89,7 @@
         }
 
         .section h2 {
-            font-family: 'Dancing Script', cursive; /* script font for section headings */
+            font-family: 'Pacifico', cursive; /* script font for section headings */
             font-size: 36px;
             margin-bottom: 20px;
             color: #333;
@@ -113,20 +113,51 @@
             border-radius: 8px;
             padding: 20px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid transparent;
         }
 
         .service-item h3 {
-            font-family: 'Dancing Script', cursive; /* script font for service headings */
+            font-family: 'Pacifico', cursive; /* script font for service headings */
             font-size: 28px;
             margin-bottom: 10px;
         }
 
-        /* Contact section */
-        .contact {
-            text-align: center;
+        /* Color accents for each service item */
+        .service-item:nth-child(1) {
+            border-color: #D17C57; /* terracotta */
+        }
+        .service-item:nth-child(1) h3 {
+            color: #D17C57;
+        }
+        .service-item:nth-child(2) {
+            border-color: #6C9374; /* sage green */
+        }
+        .service-item:nth-child(2) h3 {
+            color: #6C9374;
+        }
+        .service-item:nth-child(3) {
+            border-color: #E5B65D; /* mustard */
+        }
+        .service-item:nth-child(3) h3 {
+            color: #E5B65D;
         }
 
-        .contact a {
+        /* Color accents for section borders */
+        .events {
+            border-left: 6px solid #D17C57;
+            padding-left: 30px;
+        }
+        .gifts {
+            border-left: 6px solid #6C9374;
+            padding-left: 30px;
+        }
+        .contact-section {
+            border-left: 6px solid #E5B65D;
+            padding-left: 30px;
+        }
+
+        /* Contact section anchor styling */
+        .contact-section a {
             display: inline-block;
             margin-top: 10px;
             color: #fff;
@@ -193,19 +224,19 @@
     </section>
 
     <!-- Events Section -->
-    <section id="events" class="section">
+    <section id="events" class="section events">
         <h2>Events &amp; Celebrations</h2>
         <p>Hire us for weddings, birthdays or any special occasion to create a memorable creative corner. We set up interactive art stations so your guests can relax, connect and craft keepsakes to take home. It’s like having your bestie host the fun part of your event!</p>
     </section>
 
     <!-- Gifts Section -->
-    <section id="gifts" class="section">
+    <section id="gifts" class="section gifts">
         <h2>Gifts &amp; Hampers</h2>
         <p>Looking for the perfect thoughtful gift? Bhūmi curates beautiful hampers filled with artisanal treats, self‑care goodies, and custom keepsakes. Perfect for bridesmaids, birthdays, or just to show you care.</p>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section contact">
+    <section id="contact" class="section contact-section">
         <h2>Let&#39;s Create Together</h2>
         <p>Ready to plan your next gathering or have questions about our services? We’d love to hear from you!</p>
         <a href="mailto:hello@bhumi-creative.com">hello@bhumi-creative.com</a>
