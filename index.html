@@ -7,7 +7,6 @@
     <!-- Import Dancing Script font for headings -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <style>
-        /* Reset and basic styles */
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
@@ -15,7 +14,6 @@
             background-color: #FAF7F4;
         }
 
-        /* Navigation bar */
         .navbar {
             display: flex;
             align-items: center;
@@ -32,7 +30,7 @@
         }
 
         .nav-links {
-            margin-left: auto;
+            margin-left: 40px; /* shift nav slightly left instead of auto */
             display: flex;
             gap: 24px;
         }
@@ -43,7 +41,6 @@
             font-weight: bold;
         }
 
-        /* Hero section */
         .hero {
             height: 80vh;
             background-image: url('hero.jpg');
@@ -84,7 +81,6 @@
             margin: 0 auto;
         }
 
-        /* Section styling */
         .section {
             padding: 60px 40px;
             max-width: 900px;
@@ -103,7 +99,6 @@
             line-height: 1.5;
         }
 
-        /* Service list */
         .service-list {
             display: flex;
             flex-wrap: wrap;
@@ -135,7 +130,6 @@
             background-color: #F8EDD5;
         }
 
-        /* Section borders */
         .events {
             border-left: 6px solid #D17C57;
             padding-left: 30px;
@@ -148,8 +142,11 @@
             border-left: 6px solid #E5B65D;
             padding-left: 30px;
         }
+        .shop {
+            border-left: 6px solid #D17C57; /* give shop its own accent color */
+            padding-left: 30px;
+        }
 
-        /* Contact button */
         .contact-section a {
             display: inline-block;
             margin-top: 10px;
@@ -161,7 +158,6 @@
             font-weight: bold;
         }
 
-        /* Shop styles */
         .product-list {
             display: flex;
             flex-wrap: wrap;
@@ -198,8 +194,18 @@
         .product-item p {
             font-size: 16px;
         }
+        .product-item a.buy-button {
+            display: inline-block;
+            margin-top: 10px;
+            color: #fff;
+            background-color: #D17C57;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 20px;
@@ -209,7 +215,6 @@
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
     <nav class="navbar">
         <img src="bhumi_logo_simple.png" alt="Bhūmi Logo">
         <div class="nav-links">
@@ -222,7 +227,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>Bhūmi</h1>
@@ -230,13 +234,11 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="section">
         <h2>About Us</h2>
         <p>Bhūmi is your best friend for unforgettable gatherings. From cozy craft nights to curated gift hampers, we bring warmth, creativity and connection to every occasion. Our mission is to provide inviting spaces where friends and colleagues can relax, explore their artistic side, and share meaningful moments without the stress of planning.</p>
     </section>
 
-    <!-- Experiences Section -->
     <section id="experiences" class="section">
         <h2>Experiences</h2>
         <div class="service-list">
@@ -255,20 +257,17 @@
         </div>
     </section>
 
-    <!-- Events Section -->
     <section id="events" class="section events">
         <h2>Events &amp; Celebrations</h2>
         <p>Hire us for weddings, birthdays or any special occasion to create a memorable creative corner. We set up interactive art stations so your guests can relax, connect and craft keepsakes to take home. It’s like having your bestie host the fun part of your event! You can also add our handmade items—like handwoven scarves or jewelry—to your event packages for an extra special touch.</p>
     </section>
 
-    <!-- Gifts Section -->
     <section id="gifts" class="section gifts">
         <h2>Gifts &amp; Hampers</h2>
         <p>Looking for the perfect thoughtful gift? Bhūmi curates beautiful hampers filled with artisanal treats, self‑care goodies, and custom keepsakes. Perfect for bridesmaids, birthdays, or just to show you care.</p>
     </section>
 
-    <!-- Shop Section -->
-    <section id="shop" class="section">
+    <section id="shop" class="section shop">
         <h2>Handmade Shop</h2>
         <p>Browse a selection of our handcrafted treasures. Contact us to purchase or include these items as add‑ons to your event packages.</p>
         <div class="product-list">
@@ -276,28 +275,29 @@
                 <div class="product-image scarf"></div>
                 <h3>Handwoven Scarf</h3>
                 <p>Warm terracotta and sage tones woven with love. Perfect as gifts or event add‑ons.</p>
+                <a class="buy-button" href="mailto:hello@bhumi-creative.com?subject=Handwoven%20Scarf%20Purchase">Contact to buy</a>
             </div>
             <div class="product-item">
                 <div class="product-image painting"></div>
                 <h3>Original Painting</h3>
                 <p>Vibrant abstract artwork to brighten any space.</p>
+                <a class="buy-button" href="mailto:hello@bhumi-creative.com?subject=Original%20Painting%20Purchase">Contact to buy</a>
             </div>
             <div class="product-item">
                 <div class="product-image jewelry"></div>
                 <h3>Handmade Jewelry</h3>
                 <p>Delicate pieces inspired by nature, crafted in India.</p>
+                <a class="buy-button" href="mailto:hello@bhumi-creative.com?subject=Handmade%20Jewelry%20Purchase">Contact to buy</a>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="section contact-section">
         <h2>Let&#39;s Create Together</h2>
         <p>Ready to plan your next gathering or have questions about our services? We’d love to hear from you!</p>
         <a href="mailto:hello@bhumi-creative.com">hello@bhumi-creative.com</a>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Bhūmi Creative Studio. All rights reserved.</p>
     </footer>
