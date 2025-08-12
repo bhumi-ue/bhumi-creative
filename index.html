@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bhūmi – Gather, Create, Celebrate</title>
-    <!-- Import Dancing Script font for headings -->
+    <!-- Dancing Script for headings -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -14,33 +14,88 @@
             background-color: #FAF7F4;
         }
 
+        /* Navigation */
         .navbar {
             display: flex;
             align-items: center;
             padding: 20px 40px;
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255,255,255,0.8);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 100;
         }
-
         .navbar img {
             height: 60px;
         }
-
         .nav-links {
-            margin-left: auto; /* align nav to right */
+            margin-left: auto;
             display: flex;
-            gap: 20px; /* reduce spacing to fit better */
+            gap: 16px;
+            align-items: center;
         }
-
+        /* Mobile hamburger menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: auto;
+            cursor: pointer;
+            padding: 8px;
+        }
+        .menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 3px;
+            background-color: #333;
+            margin: 4px 0;
+            transition: all 0.3s ease;
+        }
+        .menu-toggle.open span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 6px);
+        }
+        .menu-toggle.open span:nth-child(2) {
+            opacity: 0;
+        }
+        .menu-toggle.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(4px, -6px);
+        }
+        /* Responsive styles for smaller screens */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                gap: 15px;
+                background-color: rgba(255, 255, 255, 0.95);
+                position: absolute;
+                top: 80px;
+                right: 40px;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .menu-toggle {
+                display: flex;
+            }
+            /* Adjust hero height on smaller screens */
+            .hero {
+                height: 60vh;
+            }
+            /* Reduce padding for sections on mobile */
+            .section {
+                padding: 40px 20px;
+            }
+        }
         .nav-links a {
             color: #333;
             text-decoration: none;
             font-weight: bold;
         }
 
+        /* Hero */
         .hero {
             height: 80vh;
             background-image: url('hero.jpg');
@@ -52,7 +107,6 @@
             text-align: center;
             position: relative;
         }
-
         .hero::before {
             content: '';
             position: absolute;
@@ -60,104 +114,109 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(255, 255, 255, 0.6);
+            background-color: rgba(255,255,255,0.6);
         }
-
         .hero-content {
             position: relative;
             z-index: 1;
             padding: 0 20px;
         }
-
         .hero h1 {
             font-family: 'Georgia', serif;
             font-size: 48px;
             margin-bottom: 10px;
         }
-
         .hero p {
             font-size: 24px;
             font-weight: bold;
-            margin: 0 auto;
         }
 
+        /* Generic section */
         .section {
             padding: 60px 40px;
             max-width: 900px;
             margin: 0 auto;
         }
-
         .section h2 {
             font-family: 'Dancing Script', cursive;
             font-size: 36px;
             margin-bottom: 20px;
             color: #333;
         }
-
         .section p {
             font-size: 18px;
             line-height: 1.5;
         }
 
-        .service-list {
+        /* Services categories */
+        .service-categories {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             gap: 40px;
         }
-
-        .service-item {
-            flex: 1 1 260px;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            color: #333;
+        .service-category {
+            padding-left: 30px;
+            border-left: 6px solid;
         }
-
-        .service-item h3 {
+        .service-category h3 {
             font-family: 'Dancing Script', cursive;
             font-size: 28px;
             margin-bottom: 10px;
             color: #333;
         }
+        .service-category:nth-child(1) {
+            border-color: #D17C57; /* terracotta */
+        }
+        .service-category:nth-child(2) {
+            border-color: #6C9374; /* sage */
+        }
+        .service-category:nth-child(3) {
+            border-color: #E5B65D; /* mustard */
+        }
 
-        .service-item:nth-child(1) {
-            background-color: #F1DAD0;
+        /* Packages */
+        .packages {
+            margin-top: 40px;
         }
-        .service-item:nth-child(2) {
-            background-color: #E4ECD6;
+        .packages h3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 28px;
+            margin-bottom: 10px;
         }
-        .service-item:nth-child(3) {
-            background-color: #F8EDD5;
+        .packages ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .packages li {
+            margin-bottom: 12px;
+        }
+        .packages li strong {
+            display: block;
+            margin-bottom: 4px;
         }
 
-        .events {
-            border-left: 6px solid #D17C57;
-            padding-left: 30px;
+        /* Testimonials */
+        .testimonials {
+            margin-top: 40px;
         }
-        .gifts {
-            border-left: 6px solid #6C9374;
-            padding-left: 30px;
+        .testimonials h2 {
+            margin-bottom: 20px;
         }
-        .contact-section {
-            border-left: 6px solid #E5B65D;
-            padding-left: 30px;
+        .testimonial {
+            font-style: italic;
+            margin-bottom: 20px;
+            background-color: #ffffff;
+            border-left: 4px solid #6C9374;
+            padding: 10px 20px;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
         }
+
+        /* Shop */
         .shop {
             border-left: 6px solid #D17C57;
             padding-left: 30px;
         }
-
-        .contact-section a {
-            display: inline-block;
-            margin-top: 10px;
-            color: #fff;
-            background-color: #6C9374;
-            padding: 10px 20px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
         .product-list {
             display: flex;
             flex-wrap: wrap;
@@ -168,7 +227,7 @@
             background-color: #fff;
             border-radius: 8px;
             padding: 20px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             text-align: center;
             color: #333;
         }
@@ -177,24 +236,16 @@
             border-radius: 4px;
             margin-bottom: 10px;
         }
-        .product-image.scarf {
-            background-color: #F1DAD0;
-        }
-        .product-image.painting {
-            background-color: #E4ECD6;
-        }
-        .product-image.jewelry {
-            background-color: #F8EDD5;
-        }
+        .product-image.scarf { background-color: #F1DAD0; }
+        .product-image.painting { background-color: #E4ECD6; }
+        .product-image.jewelry { background-color: #F8EDD5; }
         .product-item h3 {
             font-family: 'Dancing Script', cursive;
             font-size: 28px;
             margin-bottom: 5px;
         }
-        .product-item p {
-            font-size: 16px;
-        }
-        .product-item a.buy-button {
+        .product-item p { font-size: 16px; }
+        .buy-button {
             display: inline-block;
             margin-top: 10px;
             color: #fff;
@@ -204,6 +255,19 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 14px;
+        }
+
+        /* Contact button */
+        .contact-btn {
+            display: inline-block;
+            margin-top: 20px;
+            color: #fff;
+            background-color: #6C9374;
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
         }
 
         footer {
@@ -219,11 +283,14 @@
         <img src="bhumi_logo_simple.png" alt="Bhūmi Logo">
         <div class="nav-links">
             <a href="#about">About</a>
-            <a href="#experiences">Experiences</a>
-            <a href="#events">Events</a>
-            <a href="#gifts">Gifts &amp; Hampers</a>
+            <a href="#services">Services</a>
             <a href="#shop">Shop</a>
             <a href="#contact">Contact</a>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </nav>
 
@@ -236,35 +303,39 @@
 
     <section id="about" class="section">
         <h2>About Us</h2>
-        <p>Bhūmi is your best friend for unforgettable gatherings. From cozy craft nights to curated gift hampers, we bring warmth, creativity and connection to every occasion. Our mission is to provide inviting spaces where friends and colleagues can relax, explore their artistic side, and share meaningful moments without the stress of planning.</p>
+        <p>Bhūmi was born from a love of hosting friends and making beautiful things by hand. After seeing how much joy people found in simple creative gatherings, I decided to turn that feeling into a business. Today, Bhūmi is your best friend for unforgettable get‑togethers. From cozy craft nights to curated gift hampers, we bring warmth, creativity and connection to every occasion. Our mission is to provide inviting spaces where friends and colleagues can relax, explore their artistic side, and share meaningful moments without the stress of planning.</p>
     </section>
 
-    <section id="experiences" class="section">
-        <h2>Experiences</h2>
-        <div class="service-list">
-            <div class="service-item">
+    <section id="services" class="section">
+        <h2>Our Services</h2>
+        <div class="service-categories">
+            <div class="service-category">
                 <h3>Creative Workshops</h3>
                 <p>Enjoy relaxed sessions in painting, jewelry making, candle crafting, and more. We provide all the materials and guidance—you bring the friends.</p>
             </div>
-            <div class="service-item">
-                <h3>Team Building</h3>
-                <p>Boost collaboration and morale with custom group activities designed for corporate events. Choose from our menu of workshops or let us tailor one to your team.</p>
+            <div class="service-category">
+                <h3>Events &amp; Celebrations</h3>
+                <p>Hire us for weddings, birthdays or any special occasion to create a memorable creative corner. We set up interactive art stations so your guests can relax, connect and craft keepsakes to take home. It’s like having your bestie host the fun part of your event! You can also add our handmade items—like handwoven scarves or jewelry—to your event packages for an extra special touch.</p>
             </div>
-            <div class="service-item">
-                <h3>Private Parties</h3>
-                <p>Celebrate birthdays, bridal showers, or just because. We transform any space into a cozy studio and handle the setup, supplies, and cleanup.</p>
+            <div class="service-category">
+                <h3>Gifts &amp; Hampers</h3>
+                <p>Looking for the perfect thoughtful gift? Bhūmi curates beautiful hampers filled with artisanal treats, self‑care goodies, and custom keepsakes. Perfect for bridesmaids, birthdays, or just to show you care.</p>
             </div>
         </div>
-    </section>
-
-    <section id="events" class="section events">
-        <h2>Events &amp; Celebrations</h2>
-        <p>Hire us for weddings, birthdays or any special occasion to create a memorable creative corner. We set up interactive art stations so your guests can relax, connect and craft keepsakes to take home. It’s like having your bestie host the fun part of your event! You can also add our handmade items—like handwoven scarves or jewelry—to your event packages for an extra special touch.</p>
-    </section>
-
-    <section id="gifts" class="section gifts">
-        <h2>Gifts &amp; Hampers</h2>
-        <p>Looking for the perfect thoughtful gift? Bhūmi curates beautiful hampers filled with artisanal treats, self‑care goodies, and custom keepsakes. Perfect for bridesmaids, birthdays, or just to show you care.</p>
+        <div class="packages">
+            <h3>Sample Packages</h3>
+            <ul>
+                <li><strong>Paint &amp; Sip Party (Up to 5 guests)</strong> includes painting supplies, guidance and optional handwoven scarves for each guest – starting at $250.</li>
+                <li><strong>Jewelry‑Making Bridal Shower (Up to 8 guests)</strong> includes materials, instruction and keepsake gift boxes – starting at $400.</li>
+                <li><strong>Corporate Creative Retreat</strong> Team‑building workshop plus curated gift hampers – contact us for a custom quote.</li>
+            </ul>
+            <a href="#contact" class="contact-btn">Book Your Experience</a>
+        </div>
+        <div class="testimonials">
+            <h2>Testimonials</h2>
+            <div class="testimonial">“Bhūmi created the most relaxing and fun bridal shower! Everyone loved making jewelry, and the handwoven scarves were gorgeous.” – Sarah K.</div>
+            <div class="testimonial">“Our team building workshop was a hit. It was the perfect mix of creativity and bonding, and the curated gift hampers were such a thoughtful touch.” – Alex M.</div>
+        </div>
     </section>
 
     <section id="shop" class="section shop">
@@ -295,11 +366,29 @@
     <section id="contact" class="section contact-section">
         <h2>Let&#39;s Create Together</h2>
         <p>Ready to plan your next gathering or have questions about our services? We’d love to hear from you!</p>
-        <a href="mailto:hello@bhumi-creative.com">hello@bhumi-creative.com</a>
+        <a href="mailto:hello@bhumi-creative.com" class="contact-btn">hello@bhumi-creative.com</a>
     </section>
 
     <footer>
         <p>&copy; 2025 Bhūmi Creative Studio. All rights reserved.</p>
     </footer>
+
+    <!-- Mobile navigation toggle script -->
+    <script>
+        // Toggle the mobile navigation menu
+        const menuToggle = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('open');
+        });
+        // Close the menu when a link is clicked (for mobile)
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.classList.remove('open');
+            });
+        });
+    </script>
 </body>
 </html>
