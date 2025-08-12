@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bhūmi – Gather, Create, Celebrate</title>
-    <!-- Import Pacifico font for headings -->
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <!-- Import Dancing Script font for headings -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <style>
         /* Reset and basic styles */
         body {
@@ -89,10 +89,10 @@
         }
 
         .section h2 {
-            font-family: 'Pacifico', cursive; /* script font for section headings */
+            font-family: 'Dancing Script', cursive; /* script font for section headings */
             font-size: 36px;
             margin-bottom: 20px;
-            color: #333;
+            color: #333; /* keep headings black */
         }
 
         .section p {
@@ -109,37 +109,28 @@
 
         .service-item {
             flex: 1 1 260px;
-            background-color: #fff;
             border-radius: 8px;
             padding: 20px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            border-top: 4px solid transparent;
+            color: #333; /* text remains black */
         }
 
         .service-item h3 {
-            font-family: 'Pacifico', cursive; /* script font for service headings */
+            font-family: 'Dancing Script', cursive; /* script font for service headings */
             font-size: 28px;
             margin-bottom: 10px;
+            color: #333;
         }
 
-        /* Color accents for each service item */
+        /* Background colors for each service item from Bhūmi palette (light tints) */
         .service-item:nth-child(1) {
-            border-color: #D17C57; /* terracotta */
-        }
-        .service-item:nth-child(1) h3 {
-            color: #D17C57;
+            background-color: #F1DAD0; /* light terracotta */
         }
         .service-item:nth-child(2) {
-            border-color: #6C9374; /* sage green */
-        }
-        .service-item:nth-child(2) h3 {
-            color: #6C9374;
+            background-color: #E4ECD6; /* light sage */
         }
         .service-item:nth-child(3) {
-            border-color: #E5B65D; /* mustard */
-        }
-        .service-item:nth-child(3) h3 {
-            color: #E5B65D;
+            background-color: #F8EDD5; /* light mustard */
         }
 
         /* Color accents for section borders */
