@@ -12,13 +12,12 @@
             margin: 0;
             font-family: 'Arial', sans-serif;
             color: #333;
-            background-color: #FAF7F4; /* off‑white backdrop */
+            background-color: #FAF7F4;
         }
 
         /* Navigation bar */
         .navbar {
             display: flex;
-            justify-content: space-between;
             align-items: center;
             padding: 20px 40px;
             background-color: rgba(255, 255, 255, 0.8);
@@ -32,8 +31,13 @@
             height: 60px;
         }
 
-        .navbar a {
-            margin-left: 20px;
+        .nav-links {
+            margin-left: auto;
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
             color: #333;
             text-decoration: none;
             font-weight: bold;
@@ -52,7 +56,6 @@
             position: relative;
         }
 
-        /* Semi‑transparent overlay for hero text readability */
         .hero::before {
             content: '';
             position: absolute;
@@ -89,7 +92,7 @@
         }
 
         .section h2 {
-            font-family: 'Dancing Script', cursive; /* script font for section headings */
+            font-family: 'Dancing Script', cursive;
             font-size: 36px;
             margin-bottom: 20px;
             color: #333;
@@ -116,24 +119,23 @@
         }
 
         .service-item h3 {
-            font-family: 'Dancing Script', cursive; /* script font for service headings */
+            font-family: 'Dancing Script', cursive;
             font-size: 28px;
             margin-bottom: 10px;
             color: #333;
         }
 
-        /* Background colors for each service item from Bhūmi palette (light tints) */
         .service-item:nth-child(1) {
-            background-color: #F1DAD0; /* light terracotta */
+            background-color: #F1DAD0;
         }
         .service-item:nth-child(2) {
-            background-color: #E4ECD6; /* light sage */
+            background-color: #E4ECD6;
         }
         .service-item:nth-child(3) {
-            background-color: #F8EDD5; /* light mustard */
+            background-color: #F8EDD5;
         }
 
-        /* Color accents for section borders */
+        /* Section borders */
         .events {
             border-left: 6px solid #D17C57;
             padding-left: 30px;
@@ -147,25 +149,24 @@
             padding-left: 30px;
         }
 
-        /* Contact section anchor styling */
+        /* Contact button */
         .contact-section a {
             display: inline-block;
             margin-top: 10px;
             color: #fff;
-            background-color: #6C9374; /* sage green accent */
+            background-color: #6C9374;
             padding: 10px 20px;
             border-radius: 4px;
             text-decoration: none;
             font-weight: bold;
         }
 
-        /* Product list for shop */
+        /* Shop styles */
         .product-list {
             display: flex;
             flex-wrap: wrap;
             gap: 40px;
         }
-
         .product-item {
             flex: 1 1 260px;
             background-color: #fff;
@@ -175,20 +176,19 @@
             text-align: center;
             color: #333;
         }
-
         .product-image {
             height: 150px;
             border-radius: 4px;
             margin-bottom: 10px;
         }
         .product-image.scarf {
-            background-color: #F1DAD0; /* light terracotta */
+            background-color: #F1DAD0;
         }
         .product-image.painting {
-            background-color: #E4ECD6; /* light sage */
+            background-color: #E4ECD6;
         }
         .product-image.jewelry {
-            background-color: #F8EDD5; /* light mustard */
+            background-color: #F8EDD5;
         }
         .product-item h3 {
             font-family: 'Dancing Script', cursive;
@@ -212,7 +212,7 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <img src="bhumi_logo_simple.png" alt="Bhūmi Logo">
-        <div>
+        <div class="nav-links">
             <a href="#about">About</a>
             <a href="#experiences">Experiences</a>
             <a href="#events">Events</a>
