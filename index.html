@@ -92,7 +92,7 @@
             font-family: 'Dancing Script', cursive; /* script font for section headings */
             font-size: 36px;
             margin-bottom: 20px;
-            color: #333; /* keep headings black */
+            color: #333;
         }
 
         .section p {
@@ -112,7 +112,7 @@
             border-radius: 8px;
             padding: 20px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            color: #333; /* text remains black */
+            color: #333;
         }
 
         .service-item h3 {
@@ -159,6 +159,46 @@
             font-weight: bold;
         }
 
+        /* Product list for shop */
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .product-item {
+            flex: 1 1 260px;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            color: #333;
+        }
+
+        .product-image {
+            height: 150px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .product-image.scarf {
+            background-color: #F1DAD0; /* light terracotta */
+        }
+        .product-image.painting {
+            background-color: #E4ECD6; /* light sage */
+        }
+        .product-image.jewelry {
+            background-color: #F8EDD5; /* light mustard */
+        }
+        .product-item h3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+        .product-item p {
+            font-size: 16px;
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -177,6 +217,7 @@
             <a href="#experiences">Experiences</a>
             <a href="#events">Events</a>
             <a href="#gifts">Gifts &amp; Hampers</a>
+            <a href="#shop">Shop</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
@@ -217,13 +258,36 @@
     <!-- Events Section -->
     <section id="events" class="section events">
         <h2>Events &amp; Celebrations</h2>
-        <p>Hire us for weddings, birthdays or any special occasion to create a memorable creative corner. We set up interactive art stations so your guests can relax, connect and craft keepsakes to take home. It’s like having your bestie host the fun part of your event!</p>
+        <p>Hire us for weddings, birthdays or any special occasion to create a memorable creative corner. We set up interactive art stations so your guests can relax, connect and craft keepsakes to take home. It’s like having your bestie host the fun part of your event! You can also add our handmade items—like handwoven scarves or jewelry—to your event packages for an extra special touch.</p>
     </section>
 
     <!-- Gifts Section -->
     <section id="gifts" class="section gifts">
         <h2>Gifts &amp; Hampers</h2>
         <p>Looking for the perfect thoughtful gift? Bhūmi curates beautiful hampers filled with artisanal treats, self‑care goodies, and custom keepsakes. Perfect for bridesmaids, birthdays, or just to show you care.</p>
+    </section>
+
+    <!-- Shop Section -->
+    <section id="shop" class="section">
+        <h2>Handmade Shop</h2>
+        <p>Browse a selection of our handcrafted treasures. Contact us to purchase or include these items as add‑ons to your event packages.</p>
+        <div class="product-list">
+            <div class="product-item">
+                <div class="product-image scarf"></div>
+                <h3>Handwoven Scarf</h3>
+                <p>Warm terracotta and sage tones woven with love. Perfect as gifts or event add‑ons.</p>
+            </div>
+            <div class="product-item">
+                <div class="product-image painting"></div>
+                <h3>Original Painting</h3>
+                <p>Vibrant abstract artwork to brighten any space.</p>
+            </div>
+            <div class="product-item">
+                <div class="product-image jewelry"></div>
+                <h3>Handmade Jewelry</h3>
+                <p>Delicate pieces inspired by nature, crafted in India.</p>
+            </div>
+        </div>
     </section>
 
     <!-- Contact Section -->
